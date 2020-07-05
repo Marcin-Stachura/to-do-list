@@ -20,7 +20,12 @@
         });
         render();
         document.querySelector(".js-newTask").value = "";
-    }
+    };
+
+    const removeTask = (taskIndex) => {
+        tasks.splice(taskIndex, 1);
+        render();
+    };
 
     const welcome = () => {
         console.log("Hello there!")
@@ -39,7 +44,7 @@
             return;
 
         addNewTask(newTaskName);
-    }
+    };
 
     const render = () => {
         let htmlTasks = "";
@@ -49,11 +54,19 @@
             <li class="taskList__task
             ${task.taskDone ? " taskList__task--done" : ""}"
             >
+            <button class="js-taskDone">done?</button>
             ${task.taskName}
+            <button class="js-remove">delete</button>
             </li>
-        `;
-            document.querySelector(".js-taskList").innerHTML = htmlTasks;
-        }
+        `};
+        document.querySelector(".js-taskList").innerHTML = htmlTasks;
+
+        const removeButtons = document.querySelectorAll(".js-remove");
+        removeButtons.forEach((removeButton, taskIndex) => {
+            removeButton.addEventListener("click", () => {
+                removeTask(taskIndex);
+            });
+        });
     };
 
     const init = () => {
