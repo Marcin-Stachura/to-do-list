@@ -1,0 +1,12 @@
+.taskList {
+    background-color: rgb(220, 228, 228);
+}
+
+.taskList__task {
+    color: rgb(87, 0, 0);
+}
+
+.taskList__task--done {
+    color: rgb(0, 87, 29);
+    text-decoration: line-through;
+}
