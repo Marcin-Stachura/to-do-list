@@ -1,0 +1,26 @@
+.section {
+    margin: 20px 0;
+    background-color: hsl(60, 25%, 95%);
+}
+
+.header_h2 {
+    margin: 0;
+    padding: 15px;
+    border-bottom: 3px solid hsl(60, 25%, 85%);
+}
+
+.section__body {
+    padding: 20px;
+}
+
+.taskList__task {
+    color: hsl(60, 25%, 10%);
+    padding: 10px;
+    list-style-type: none;
+    border-bottom: 2px solid hsl(60, 25%, 85%);
+}
+
+.taskList__task--done {
+    color: hsl(60, 89%, 15%);
+    text-decoration: line-through;
+}
