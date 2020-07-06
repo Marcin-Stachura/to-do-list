@@ -82,9 +82,12 @@
             <li class="taskList__task
             ${task.taskDone ? " taskList__task--done" : ""}"
             >
-            <button class="js-taskDone">done?</button>
+            <button class="js-taskDone listButton listButton--isDone
+            ${task.taskDone ? " listButton--done" : ""}">
+            ${task.taskDone ? "✔" : ""}
+            </button>
             ${task.taskName}
-            <button class="js-remove">delete</button>
+            <button class="js-remove listButton listButton--remove">🗑</button>
             </li>
         `};
         document.querySelector(".js-taskList").innerHTML = htmlTasks;

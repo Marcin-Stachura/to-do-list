@@ -24,3 +24,50 @@
     color: hsl(60, 89%, 15%);
     text-decoration: line-through;
 }
+
+.form__button {
+    border: none;
+    background-color: teal;
+    color: white;
+    padding: 10px 20px;
+}
+
+.form__button:focus {
+    outline: none;
+}
+
+.form__button:focus {
+    outline: none;
+}
+
+.form__button:active {
+    outline: 1px solid grey;
+    background-color: hsl(180, 100%, 30%);
+}
+
+.form__input {
+    padding: 5px 10px;
+    border: 2px solid hsl(60, 25%, 85%);
+}
+
+.listButton {
+    width: 35px;
+    height: 35px;
+    border: none;
+    padding: none;
+}
+
+.listButton--isDone {
+    background-color: hsl(120, 100%, 30%);
+    color: white;
+    font-size: 130%;
+}
+
+.listButton--remove {
+    background-color: crimson;
+    font-size: 180%;
+}
+
+.listButton--done {
+    background-color: hsl(120, 100%, 35%);
+}
