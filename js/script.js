@@ -1,17 +1,6 @@
 {
 
-    const tasks = [
-
-        {
-            taskName: "test task done",
-            taskDone: true,
-        },
-        {
-            taskName: "test task not done",
-            taskDone: false,
-        },
-
-    ];
+    const tasks = [];
 
     const welcome = () => {
         console.log("Hello there!")
@@ -82,11 +71,13 @@
             <li class="taskList__task
             ${task.taskDone ? " taskList__task--done" : ""}"
             >
-            <button class="js-taskDone listButton listButton--isDone
-            ${task.taskDone ? " listButton--done" : ""}">
+            <button class="js-taskDone listButton listButton--done">
             ${task.taskDone ? "✔" : ""}
             </button>
-            ${task.taskName}
+            <span
+            ${task.taskDone ? " class=\"taskList__taskName\"" : ""}">
+            ${task.taskName}</span>
+            
             <button class="js-remove listButton listButton--remove">🗑</button>
             </li>
         `};

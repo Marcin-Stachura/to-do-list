@@ -13,28 +13,26 @@
         rel="stylesheet">
     <script defer src="js/script.js"></script>
     <link rel="stylesheet" href="css/body.css">
-    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/section.css">
 
 </head>
 
 <body class="body">
-    <header class="header_h1">
-        <h1>My to-do list</h1>
-    </header>
 
     <main class="main">
 
+        <h1 class="header__h1">My to-do list</h1>
+
         <div class="section">
-            <h2 class="header_h2"> Add new task</h2>
-            <form class="js-form section__body">
+            <h2 class="header__h2"> Add new task</h2>
+            <form class="js-form section__body form">
                 <input class="js-newTask form__input" autofocus placeholder="New task name...">
                 <button class="form__button">Add task</button>
             </form>
         </div>
 
         <div class="section">
-            <h2 class="header_h2"> Task list:</h2>
+            <h2 class="header__h2"> Task list:</h2>
             <ul class="section__body js-taskList"></ul>
         </div>
 

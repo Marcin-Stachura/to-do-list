@@ -11,6 +11,10 @@ html {
     background-color: hsl(60, 25%, 85%);
     color: hsl(60, 25%, 10%);
     line-height: 1.5;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
+}
+
+.main {
+    margin: 10px;
 }

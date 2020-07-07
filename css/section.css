@@ -1,9 +1,14 @@
 .section {
     margin: 20px 0;
     background-color: hsl(60, 25%, 95%);
+    box-shadow: 4px 4px 30px 10px hsl(60, 25%, 75%);
 }
 
-.header_h2 {
+.header__h1 {
+    padding: 20px 10px;
+}
+
+.header__h2 {
     margin: 0;
     padding: 15px;
     border-bottom: 3px solid hsl(60, 25%, 85%);
@@ -13,16 +18,29 @@
     padding: 20px;
 }
 
+.form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px;
+}
+
 .taskList__task {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 20px;
+    align-items: center;
     color: hsl(60, 25%, 10%);
     padding: 10px;
     list-style-type: none;
     border-bottom: 2px solid hsl(60, 25%, 85%);
 }
 
+.taskList__taskName {
+    text-decoration: line-through;
+}
+
 .taskList__task--done {
     color: hsl(60, 89%, 15%);
-    text-decoration: line-through;
 }
 
 .form__button {
@@ -32,16 +50,7 @@
     padding: 10px 20px;
 }
 
-.form__button:focus {
-    outline: none;
-}
-
-.form__button:focus {
-    outline: none;
-}
-
 .form__button:active {
-    outline: 1px solid grey;
     background-color: hsl(180, 100%, 30%);
 }
 
@@ -54,20 +63,32 @@
     width: 35px;
     height: 35px;
     border: none;
-    padding: none;
-}
-
-.listButton--isDone {
-    background-color: hsl(120, 100%, 30%);
     color: white;
-    font-size: 130%;
-}
-
-.listButton--remove {
-    background-color: crimson;
-    font-size: 180%;
+    padding: 0px;
 }
 
 .listButton--done {
+    background-color: hsl(120, 100%, 30%);
+    font-size: 130%;
+}
+
+.listButton--done:hover {
     background-color: hsl(120, 100%, 35%);
+}
+
+.listButton--done:active {
+    background-color: hsl(120, 100%, 40%);
+}
+
+.listButton--remove {
+    background-color: hsl(353, 100%, 45%);
+    font-size: 160%;
+}
+
+.listButton--remove:hover {
+    background-color: hsl(353, 100%, 55%);
+}
+
+.listButton--remove:active {
+    background-color: hsl(353, 100%, 65%);
 }
