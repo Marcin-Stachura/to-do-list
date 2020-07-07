@@ -4,6 +4,10 @@
     box-shadow: 4px 4px 30px 10px hsl(60, 25%, 75%);
 }
 
+.section__body {
+    padding: 20px;
+}
+
 .header__h1 {
     padding: 20px 10px;
 }
@@ -14,14 +18,30 @@
     border-bottom: 3px solid hsl(60, 25%, 85%);
 }
 
-.section__body {
-    padding: 20px;
-}
-
 .form {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-gap: 20px;
+}
+
+.form__button {
+    border: none;
+    background-color: hsl(180, 100%, 25%);
+    color: white;
+    padding: 10px 20px;
+}
+
+.form__button:hover {
+    background-color: hsl(180, 100%, 29%);
+}
+
+.form__button:active {
+    background-color: hsl(180, 100%, 33%);
+}
+
+.form__input {
+    padding: 5px 10px;
+    border: 2px solid hsl(60, 25%, 85%);
 }
 
 .taskList__task {
@@ -41,22 +61,6 @@
 
 .taskList__task--done {
     color: hsl(60, 89%, 15%);
-}
-
-.form__button {
-    border: none;
-    background-color: teal;
-    color: white;
-    padding: 10px 20px;
-}
-
-.form__button:active {
-    background-color: hsl(180, 100%, 30%);
-}
-
-.form__input {
-    padding: 5px 10px;
-    border: 2px solid hsl(60, 25%, 85%);
 }
 
 .listButton {
