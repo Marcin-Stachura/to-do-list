@@ -15,10 +15,12 @@
         event.preventDefault(event);
         const newTaskName = document.querySelector(".js-newTask").value.trim();
 
-        if (newTaskName === "")
+        if (newTaskName === "") {
+            clearInput();
             return;
-
+        }
         addNewTask(newTaskName);
+        clearInput();
     };
 
     const addNewTask = (newTaskName) => {
@@ -27,7 +29,6 @@
             taskDone: false,
         });
         render();
-        clearInput();
     };
 
     const removeTask = (taskIndex) => {
