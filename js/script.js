@@ -1,6 +1,6 @@
 {
 
-    const tasks = [];
+    let tasks = [];
 
     const welcome = () => {
         console.log("Hello there!")
@@ -24,20 +24,27 @@
     };
 
     const addNewTask = (newTaskName) => {
-        tasks.push({
-            taskName: newTaskName,
-            taskDone: false,
-        });
+        tasks = [
+            ...tasks,
+            { taskName: newTaskName },
+        ];
         render();
     };
 
     const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            ...tasks.slice(taskIndex + 1),
+        ];
         render();
     };
 
     const toggleDoneTask = (taskIndex) => {
-        tasks[taskIndex].taskDone = !tasks[taskIndex].taskDone;
+        tasks = [
+            ...tasks.slice(0, taskIndex),
+            { ...tasks[taskIndex], taskDone: !tasks[taskIndex].taskDone },
+            ...tasks.slice(taskIndex + 1),
+        ]
         render();
     };
 
@@ -64,7 +71,7 @@
         document.querySelector(".js-newTask").focus();
     };
 
-    const render = () => {
+    const renderTasks = () => {
         let htmlTasks = "";
 
         for (const task of tasks) {
@@ -83,10 +90,25 @@
             </li>
         `};
         document.querySelector(".js-taskList").innerHTML = htmlTasks;
+    };
 
+    const renderButtons = () => {
+        let htmlButtons = ``;
+        if (document.querySelector(".js-taskList").innerHTML !== "") {
+            htmlButtons += `
+            <span> <button class=\"js-ToggleVisibilityDoneTasks taskListButton \">add/delete task</button></span>
+            <span> <button class=\"js-setDoneTasks taskListButton \">all done!</button></span>
+            `;
+        }
+        document.querySelector(".js-taskListButtonRow").innerHTML = htmlButtons;
+    };
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
         bindDeleteButtonEvents();
         bindToggleDoneButtonEvents();
-    };
+    }
 
     const init = () => {
 

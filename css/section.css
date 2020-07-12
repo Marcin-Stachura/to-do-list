@@ -20,7 +20,7 @@
 
 .form {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto auto;
     grid-gap: 20px;
 }
 
@@ -48,6 +48,37 @@
 .form__input {
     padding: 5px 10px;
     border: 2px solid hsl(60, 25%, 85%);
+}
+
+.taskListRow {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 20px;
+}
+
+@media (max-width: 767px) {
+    .taskListRow {
+        grid-template-columns: auto;
+    }
+}
+
+.taskListButtonRow {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+@media (max-width: 767px) {
+    .taskListButtonRow {
+        grid-template-columns: auto;
+    }
+}
+
+.taskListButton {
+    font-size: 14px;
+    color: hsl(180, 100%, 15%);
+    background-color: inherit;
+    border: none;
+    margin: 0px 0px 0px 20px;
 }
 
 .taskList__task {
