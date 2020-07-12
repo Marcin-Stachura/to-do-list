@@ -144,7 +144,6 @@
             <span> <button 
             ${alldone ? "disabled" : ""}
             class=\"js-setDoneTasks taskListButton
-            ${alldone ? "taskListButton--disabled" : ""}
              \">All tasks done!</button></span>
             `;
         };

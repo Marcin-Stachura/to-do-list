@@ -35,14 +35,15 @@
     background-color: hsl(180, 100%, 25%);
     color: white;
     padding: 10px 20px;
+    transition: 0.4s;
 }
 
 .form__button:hover {
-    background-color: hsl(180, 100%, 29%);
+    background-color: hsl(180, 100%, 30%);
 }
 
 .form__button:active {
-    background-color: hsl(180, 100%, 33%);
+    background-color: hsl(180, 100%, 35%);
 }
 
 .form__input {
@@ -82,8 +83,16 @@
     margin: 0px 0px 0px 20px;
 }
 
-.taskListButton--disabled {
-    color: hsl(60, 15%, 65%);
+.taskListButton:hover {
+    color: hsl(180, 100%, 30%);
+}
+
+.taskListButton:active {
+    color: hsl(180, 100%, 35%);
+}
+
+.taskListButton:disabled {
+    color: hsl(60, 10%, 75%);
 }
 
 .taskList__task {
@@ -136,9 +145,9 @@
 }
 
 .listButton--remove:hover {
-    background-color: hsl(353, 100%, 55%);
+    background-color: hsl(353, 100%, 60%);
 }
 
 .listButton--remove:active {
-    background-color: hsl(353, 100%, 65%);
+    background-color: hsl(353, 100%, 70%);
 }
