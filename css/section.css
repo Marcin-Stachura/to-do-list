@@ -82,6 +82,10 @@
     margin: 0px 0px 0px 20px;
 }
 
+.taskListButton--disabled {
+    color: hsl(60, 15%, 65%);
+}
+
 .taskList__task {
     display: grid;
     grid-template-columns: auto 1fr auto;

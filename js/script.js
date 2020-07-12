@@ -131,10 +131,21 @@
     const renderButtons = () => {
         let htmlButtons = ``;
         if (document.querySelector(".js-taskList").innerHTML !== "") {
+
+            let alldone = true;
+            for (const task of tasks) {
+                if (!task.taskDone)
+                    alldone = false;
+            };
+
             htmlButtons += `
             <span> <button class=\"js-ToggleVisibilityDoneTasks taskListButton \">
             ${hideDoneTasks ? "Show " : "Hide "}done tasks</button></span>
-            <span> <button class=\"js-setDoneTasks taskListButton \">All tasks done!</button></span>
+            <span> <button 
+            ${alldone ? "disabled" : ""}
+            class=\"js-setDoneTasks taskListButton
+            ${alldone ? "taskListButton--disabled" : ""}
+             \">All tasks done!</button></span>
             `;
         };
         document.querySelector(".js-taskListButtonRow").innerHTML = htmlButtons;
