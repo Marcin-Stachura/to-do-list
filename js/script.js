@@ -54,6 +54,13 @@
         render();
     };
 
+    const SetAllDoneTasks = () => {
+        for (const task of tasks) {
+            task.taskDone = true;
+        };
+        render();
+    };
+
     const bindDeleteButtonEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
         removeButtons.forEach((removeButton, taskIndex) => {
@@ -79,11 +86,19 @@
         });
     };
 
+    const bindToggleAllDoneEvent = () => {
+        const ToggleDoneAllButton = document.querySelector(".js-setDoneTasks");
+        ToggleDoneAllButton.addEventListener("click", () => {
+            SetAllDoneTasks();
+        });
+    };
+
     const bindToggleButtonsEvents = () => {
         if (document.querySelector(".js-taskList").innerHTML === "") {
             return;
         };
         bindToggleHideDoneTasksEvent();
+        bindToggleAllDoneEvent();
     };
 
     const clearInput = () => {
@@ -119,7 +134,7 @@
             htmlButtons += `
             <span> <button class=\"js-ToggleVisibilityDoneTasks taskListButton \">
             ${hideDoneTasks ? "Show " : "Hide "}done tasks</button></span>
-            <span> <button class=\"js-setDoneTasks taskListButton \">All done!</button></span>
+            <span> <button class=\"js-setDoneTasks taskListButton \">All tasks done!</button></span>
             `;
         };
         document.querySelector(".js-taskListButtonRow").innerHTML = htmlButtons;
