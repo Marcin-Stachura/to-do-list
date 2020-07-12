@@ -1,6 +1,7 @@
 {
 
     let tasks = [];
+    let hideDoneTasks = false;
 
     const welcome = () => {
         console.log("Hello there!")
@@ -48,6 +49,11 @@
         render();
     };
 
+    const ToggleHideDoneTasks = () => {
+        hideDoneTasks = !hideDoneTasks;
+        render();
+    };
+
     const bindDeleteButtonEvents = () => {
         const removeButtons = document.querySelectorAll(".js-remove");
         removeButtons.forEach((removeButton, taskIndex) => {
@@ -64,6 +70,20 @@
                 toggleDoneTask(taskIndex);
             });
         });
+    };
+
+    const bindToggleHideDoneTasksEvent = () => {
+        const ToggleHideDoneTasksButton = document.querySelector(".js-ToggleVisibilityDoneTasks");
+        ToggleHideDoneTasksButton.addEventListener("click", () => {
+            ToggleHideDoneTasks();
+        });
+    };
+
+    const bindToggleButtonsEvents = () => {
+        if (document.querySelector(".js-taskList").innerHTML === "") {
+            return;
+        };
+        bindToggleHideDoneTasksEvent();
     };
 
     const clearInput = () => {
@@ -96,7 +116,8 @@
         let htmlButtons = ``;
         if (document.querySelector(".js-taskList").innerHTML !== "") {
             htmlButtons += `
-            <span> <button class=\"js-ToggleVisibilityDoneTasks taskListButton \">add/delete task</button></span>
+            <span> <button class=\"js-ToggleVisibilityDoneTasks taskListButton \">
+            ${hideDoneTasks ? "show " : "hide "}done tasks</button></span>
             <span> <button class=\"js-setDoneTasks taskListButton \">all done!</button></span>
             `;
         }
@@ -108,6 +129,7 @@
         renderButtons();
         bindDeleteButtonEvents();
         bindToggleDoneButtonEvents();
+        bindToggleButtonsEvents();
     }
 
     const init = () => {

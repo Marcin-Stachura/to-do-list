@@ -65,6 +65,7 @@
 .taskListButtonRow {
     display: grid;
     grid-template-columns: auto auto;
+    justify-items: center;
 }
 
 @media (max-width: 767px) {
@@ -75,7 +76,7 @@
 
 .taskListButton {
     font-size: 14px;
-    color: hsl(180, 100%, 15%);
+    color: hsl(180, 100%, 25%);
     background-color: inherit;
     border: none;
     margin: 0px 0px 0px 20px;
