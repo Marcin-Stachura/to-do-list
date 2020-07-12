@@ -97,7 +97,8 @@
         for (const task of tasks) {
             htmlTasks += `
             <li class="taskList__task
-            ${task.taskDone ? " taskList__task--done" : ""}"
+            ${task.taskDone ? " taskList__task--done" : ""}
+            ${(hideDoneTasks && task.taskDone) ? " taskList__task--hidden" : ""}"
             >
             <button class="js-taskDone listButton listButton--done">
             ${task.taskDone ? "✔" : ""}
@@ -117,10 +118,10 @@
         if (document.querySelector(".js-taskList").innerHTML !== "") {
             htmlButtons += `
             <span> <button class=\"js-ToggleVisibilityDoneTasks taskListButton \">
-            ${hideDoneTasks ? "show " : "hide "}done tasks</button></span>
-            <span> <button class=\"js-setDoneTasks taskListButton \">all done!</button></span>
+            ${hideDoneTasks ? "Show " : "Hide "}done tasks</button></span>
+            <span> <button class=\"js-setDoneTasks taskListButton \">All done!</button></span>
             `;
-        }
+        };
         document.querySelector(".js-taskListButtonRow").innerHTML = htmlButtons;
     };
 

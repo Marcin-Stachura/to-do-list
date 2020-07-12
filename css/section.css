@@ -75,7 +75,7 @@
 }
 
 .taskListButton {
-    font-size: 14px;
+    font-size: 16px;
     color: hsl(180, 100%, 25%);
     background-color: inherit;
     border: none;
@@ -93,12 +93,16 @@
     border-bottom: 2px solid hsl(60, 25%, 85%);
 }
 
-.taskList__taskName {
-    text-decoration: line-through;
-}
-
 .taskList__task--done {
     color: hsl(60, 89%, 15%);
+}
+
+.taskList__task--hidden {
+    display: none;
+}
+
+.taskList__taskName {
+    text-decoration: line-through;
 }
 
 .listButton {
