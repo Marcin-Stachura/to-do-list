@@ -35,7 +35,7 @@
     background-color: hsl(180, 100%, 25%);
     color: white;
     padding: 10px 20px;
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 .form__button:hover {
@@ -77,14 +77,15 @@
 
 .taskListButton {
     font-size: 16px;
-    color: hsl(180, 100%, 25%);
+    color: hsl(180, 100%, 20%);
     background-color: inherit;
     border: none;
     margin: 0px 0px 0px 20px;
+    transition: 0.3s;
 }
 
 .taskListButton:hover {
-    color: hsl(180, 100%, 30%);
+    color: hsl(180, 100%, 28%);
 }
 
 .taskListButton:active {
@@ -124,6 +125,7 @@
     border: none;
     color: white;
     padding: 0px;
+    transition: 0.3s;
 }
 
 .listButton--done {
